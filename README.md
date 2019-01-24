@@ -53,3 +53,31 @@ For example, if n = 3, and the three categories are “Games,” “Medical,” 
 are to allocate an array of size 3 of struct categories and initialize each position to the category name
 and a a pointer to the root of a search tree for applications in that category (initially nil)
 
+# Project 3: Graphs
+Graphs are a pervasive data structure, and algorithms for working with them are fundamental in computer
+science. There are a great number of interesting and practical computational problems defined in terms of
+graphs. The goal in this project is to implement a few of them. To have more chance to interpret the results,
+we use some real data sets in this project, for example, a social networking data set from Facebook, and
+a data set that represents how autonomous systems (ASs) in the internet exchange traffic flows with their
+peers, i.e., their neighbours.
+
+### Data Format and Data Sets
+##### Adjacency List Graph Representation
+In this project, you must use an adjacency list to represent the graph. Such a representation of a graph
+G = (V, E) consists of an array A of n = |V | pointers to linked lists, one for each vertex in V . For each
+u ∈ V , the adjacency list A[u] contains all the vertices v such that there is an edge (u, v) ∈ E. That is,
+A[u] consists of linked list of all the vertices adjacent to u in G. The vertices in each adjacency list are not
+ordered.</br>
+##### Input Data Format
+You must read the input data from standard input (stdin). The data is provided in a file as a convenience;
+you should redirect stdin from the file, i.e., do not use any file operations.
+The format of the input is as follows:
+<pre> 1. First, the the graph G = (V, E) is provided. The first line gives n = |V |, the number of vertices in the
+graph. The second line gives m = |E|, the number of edges in the graph. Each of the next m lines
+gives an edge e = (u, v) ∈ E specified by its two endpoints, i.e., u, v ∈ {0, 1, . . . , n − 1}. If there are
+self-loops, i.e., u = v, do not insert them into the graph.
+You should allocate an array of pointers of size n, and initialize each entry in the array to Nil. As
+each edge e = (u, v) is processed, insert it into the adjacency list for vertices u and v.
+2. Once the graph is initialized, commands to perform analyses of the graph then follow. That is, after
+the last edge in the graph, a line with k, the number of commands to execute is given. The subsequent
+k lines each has one command.</pre>
